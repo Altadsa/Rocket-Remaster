@@ -40,7 +40,7 @@ public class RocketMovement
     float _moveSpeed = 10;
 
     //TODO Remove once ready
-    bool _usingKeyboard = false;
+    bool _usingKeyboard = true;
 
     public RocketMovement(Transform rocketTransform, float speed)
     {

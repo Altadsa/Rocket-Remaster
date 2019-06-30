@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserCannon : MonoBehaviour
+public class LaserCannon : RocketItem
 {
     [SerializeField] GameObject[] _projectiles;
-
     int _ammo = 10;
 
     float _fireRate = 1.5f;
@@ -25,7 +23,7 @@ public class LaserCannon : MonoBehaviour
             {
                 yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
                 _timeSinceFire = 0;
-                _projectiles[_ammo - 1].transform.position = transform.position;
+                _projectiles[_ammo - 1].transform.position = _rocket.transform.position;
                 _projectiles[_ammo - 1].SetActive(true);
                 _ammo--;
             }
