@@ -27,7 +27,8 @@ public class PhaseShift : RocketItem
             _elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        _rocketCollider.enabled = true;
+        _rocketCollider.enabled = true
+            ;
         _elapsed = 0;
         gameObject.SetActive(false);
     }
