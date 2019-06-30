@@ -8,6 +8,8 @@ public class PhaseShift : RocketItem
     float _duration = 10;
     float _elapsed = 0;
 
+    public override int ItemRemainder => (int)(_duration - _elapsed);
+
     private new void Awake()
     {
         base.Awake();

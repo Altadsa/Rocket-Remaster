@@ -5,7 +5,7 @@ public class ItemManager : MonoBehaviour
 {
     RocketItem[] _items;
 
-    RocketItem _equipped;
+    public RocketItem Equipped { get; private set; }
 
     public void OnGameStart()
     {
@@ -17,17 +17,24 @@ public class ItemManager : MonoBehaviour
         }
     }
 
+    public void OnGameOver()
+    {
+        if (Equipped)
+        {
+            Equipped.gameObject.SetActive(false);
+            Equipped = null;
+        }
+    }
+
     public void EquipItem(ItemData data)
     {
-        if (_equipped != null) return;
-        _equipped = _items.First(i => i.Data.Id == data.Id);
-        _equipped.gameObject.SetActive(true);
+        Equipped = _items.First(i => i.Data.Id == data.Id);
+        Equipped.gameObject.SetActive(true);
     }
 
     private void ItemInactive(RocketItem inactiveItem)
     {
-        if (_equipped.Data.Id == inactiveItem.Data.Id)
-            _equipped = null;
+        Equipped = null;
     }
 
 }

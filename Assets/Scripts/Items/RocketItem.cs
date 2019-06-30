@@ -9,6 +9,8 @@ public abstract class RocketItem : MonoBehaviour
     public ItemData Data => _itemData;
     public event Action<RocketItem> OnItemInactive;
 
+    public abstract int ItemRemainder { get; }
+
     protected void Awake()
     {
         if (!_rocket) _rocket = FindObjectOfType<RocketController>();

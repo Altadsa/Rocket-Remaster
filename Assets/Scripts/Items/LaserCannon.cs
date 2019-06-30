@@ -9,6 +9,8 @@ public class LaserCannon : RocketItem
     float _fireRate = 1.5f;
     float _timeSinceFire = 0;
 
+    public override int ItemRemainder => _ammo;
+
     private void OnEnable()
     {
         _ammo = 10;
