@@ -20,7 +20,7 @@ public class RocketController : MonoBehaviour
         _movement.Update();
     }
 
-    public void OnGameStart()
+    public void ResetRocket()
     {
         enabled = true;
         transform.position = _orignalPosition;
